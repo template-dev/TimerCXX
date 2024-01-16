@@ -18,11 +18,7 @@ void timer(int h, int m)
 		std::this_thread::sleep_for(std::chrono::seconds(1));
 		std::system("cls");
 
-		std::chrono::minutes time;
-		if (h == 0 && m != 0)
-			time = std::chrono::minutes(m);
-		else
-			time = std::chrono::hours(h) + std::chrono::minutes(m);
+		std::chrono::minutes time = std::chrono::hours(h) + std::chrono::minutes(m);;
 		int hours = std::chrono::duration_cast<std::chrono::minutes>(time).count() / 60;
 		int mins = std::chrono::duration_cast<std::chrono::minutes>(time).count() % 60;
 
