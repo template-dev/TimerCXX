@@ -22,7 +22,6 @@ void timer(int h, int m)
 		int hours = std::chrono::duration_cast<std::chrono::minutes>(time).count() / 60;
 		int mins = std::chrono::duration_cast<std::chrono::minutes>(time).count() % 60;
 
-
 		std::cout << (hours < 10 ? "0" : "") << hours << ":" << (mins < 10 ? "0" : "") << mins << std::endl;
 		if (h == 0 && m == 0)
 		{
