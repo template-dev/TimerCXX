@@ -5,14 +5,14 @@
 
 void timer(int h, int m)
 {
+	std::mutex myMutex;
+	std::lock_guard<std::mutex> lock(myMutex);
 	if (h < 0 || m < 0)
 	{
 		std::cout << "hours or minutes are equal to 0\n";
 		return;
 	}
 
-	std::mutex myMutex;
-	std::lock_guard<std::mutex> lock(myMutex);
 	while (true)
 	{
 		std::this_thread::sleep_for(std::chrono::seconds(1));
