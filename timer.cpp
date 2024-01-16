@@ -7,9 +7,9 @@ void timer(int h, int m)
 {
 	std::mutex myMutex;
 	std::lock_guard<std::mutex> lock(myMutex);
-	if (h < 0 || m < 0)
+	if (h < 0 || m < 0 || m > 60)
 	{
-		std::cout << "hours or minutes are equal to 0\n";
+		std::cout << "Wrong value!\n";
 		return;
 	}
 
